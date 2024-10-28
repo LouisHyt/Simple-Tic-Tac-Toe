@@ -1,0 +1,72 @@
+:root{
+    --cellWidth: 75px;
+}
+
+.cell{
+    width: var(--cellWidth);
+    aspect-ratio: 1;
+    border: 2px solid black;
+    box-shadow: 0 0 0 2px;
+    font-size: 50px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s;
+    display: grid;
+    place-items: center;
+
+    &.playerX{
+        background-color: rgb(230, 108, 108);
+    }
+
+    &.playerO{
+        background-color: rgb(108, 230, 141);
+    }
+
+}
+
+#cellContainer[game-running="true"] > .cell:empty:hover{
+    background-color: rgba(94, 129, 189, 0.472);
+}
+
+#cellContainer[game-running="true"][current-player="X"] > .cell:empty:hover::before{
+    content: "X";
+    position: absolute;
+    margin: 0 auto;
+    color: rgba(0, 0, 0, 0.321);
+}
+
+#cellContainer[game-running="true"][current-player="O"] > .cell:empty:hover::before{
+    content: "O";
+    position: absolute;
+    margin: 0 auto;
+    color: rgba(0, 0, 0, 0.321);
+}
+
+#container{
+    font-family: Roboto;
+    text-align: center;
+}
+
+#cellContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: calc(var(--cellWidth) * 3);
+    margin: 0 auto;
+}
+
+#restart{
+    font-family: inherit;
+    font-size: 1em;
+    border: 0;
+    padding: 0.5em 1.5em;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: rgb(134, 213, 233);
+    cursor: pointer;
+    transition: 0.2s background-color;
+
+    &:hover{
+        background-color: rgb(160, 220, 235);
+    }
+
+}
