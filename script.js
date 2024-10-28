@@ -4,7 +4,6 @@ const infos = document.querySelector("#infos");
 const restartButton = document.querySelector("#restart");
 
 
-const gridData = new Map();
 const winConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -27,7 +26,7 @@ initializeGame();
 
 
 
-function initializeGame(){
+function initGame(){
     for(const cell of cells){
         cell.addEventListener("click", cellClicked);
     }
