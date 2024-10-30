@@ -22,7 +22,7 @@ cellContainer.setAttribute("game-running", true);
 cellContainer.setAttribute("current-player", "X");
 
 
-initializeGame();
+initGame();
 
 
 
